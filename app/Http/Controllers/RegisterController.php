@@ -11,6 +11,8 @@ class RegisterController extends Controller
         return view('registro');
     }
 
-
+    public function store(Request $request) {
+        dd($request);
+    }
 
 }

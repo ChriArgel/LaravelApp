@@ -12,7 +12,8 @@ Registro
         </div>
 
         <div class="col-6">
-            <form>
+            <form action="/registro" method="POST">
+                @csrf
                 <!-- Username input -->
                 <div class="form-outline mb-4">
                     <input type="text" id="registerUsername" class="form-control" />
