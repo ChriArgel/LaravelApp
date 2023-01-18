@@ -18,27 +18,39 @@ Registro
                 @csrf
                 <!-- Username input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registerUsername" class="form-control" />
+                    <input type="text" id="registerUsername" name="username" class="form-control" />
                     <label class="form-label" for="registerUsername">Username</label>
                 </div>
+                @error ('username')
+                <p style="color: red">{{$message}}</p>
+                @enderror
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="form1Example2" class="form-control" />
+                    <input type="password" id="form1Example2" name="password" class="form-control" />
                     <label class="form-label" for="form1Example2">Password</label>
                 </div>
+                @error ('password')
+                <p style="color: red">{{$message}}</p>
+                @enderror
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="email" id="form1Example1" class="form-control" />
+                    <input type="email" id="form1Example1" name="email" class="form-control" />
                     <label class="form-label" for="form1Example1">Email address</label>
                 </div>
+                @error ('email')
+                <p style="color: red">{{$message}}</p>
+                @enderror
 
                 <!-- Name input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="form5Example1" class="form-control" />
+                    <input type="text" id="form5Example1" name="name" class="form-control" />
                     <label class="form-label" for="form5Example1">Name</label>
                 </div>
+                @error ('name')
+                <p style="color: red">{{$message}}</p>
+                @enderror
 
                 <!-- 2 column grid layout for inline styling -->
                 <div class="row mb-4">
