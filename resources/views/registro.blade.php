@@ -12,6 +12,8 @@ Registro
         </div>
 
         <div class="col-6">
+            <!-- agregamos aqui el  action="/registro" method="POST"> al form
+                            @csrf-->
             <form action="/registro" method="POST">
                 @csrf
                 <!-- Username input -->
