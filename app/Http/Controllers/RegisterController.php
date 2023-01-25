@@ -20,7 +20,7 @@ class RegisterController extends Controller
             'name' => 'required|min:5',
             'username' => 'required|unique:users|min:3|max:30',
             'email' => 'required|unique:users|email',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|min:6',
 
         ]);
 
@@ -31,7 +31,11 @@ class RegisterController extends Controller
             'password' => Hash::make($request -> password)
         ]);
 
+        // esto nos sirve para redireccionar hacia el  
 
+        auth()-> attempt ($request -> only('email', 'password'));
+
+        return redirect() -> route('post.index');
     }
 
 }
