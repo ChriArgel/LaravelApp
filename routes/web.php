@@ -32,3 +32,8 @@ Route::get('/', function () {
 
 Route::get('/registro', [RegisterController::class, 'index']);
 Route::post('/registro', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+Route::get('/muro', [PostController::class, 'index'])->name('post');

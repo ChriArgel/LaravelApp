@@ -31,7 +31,8 @@ class RegisterController extends Controller
             'password' => Hash::make($request -> password)
         ]);
 
-        // esto nos sirve para redireccionar hacia el  
+        // esto nos sirve para redireccionar hacia el post index que autentifica el usuario y la contraseña
+        
 
         auth()-> attempt ($request -> only('email', 'password'));
 
