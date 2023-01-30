@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PruebaController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// oute::get('/login', function () {
+// Route::get('/login', function () {
 //     return view('login');
 // });
 
@@ -33,7 +37,10 @@ Route::get('/', function () {
 Route::get('/registro', [RegisterController::class, 'index']);
 Route::post('/registro', [RegisterController::class, 'store']);
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/sendLoginForm', [LoginController::class, 'store'])-> name('SendlogInfo');
+
+Route::get('/prueba', [PruebaController::class, 'index']);
+
 
 Route::get('/muro', [PostController::class, 'index'])->name('post');

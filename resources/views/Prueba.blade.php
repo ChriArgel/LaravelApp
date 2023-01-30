@@ -1,10 +1,3 @@
-@extends('layouts.layoutprincipal')
-
-@section('titulo')
-login
-@endsection
-
-@section('contenido')
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-6">
@@ -15,13 +8,13 @@ login
 
         <div class="col-6">
             <!-- LA FORMA SERA ENVIADA CON TODOS LOS DATOS A LA RUTA LOGIN  -->
-                 <form action="{{ route('/SendlogInfo) }}" method="POST"> -->
+            <form >
                 @crsf
 
                 <!-- LO DE ABAJO SE ENLAZA CON EL LOGIN CONTROLLER PARA INDICAR EL MENSAJE QUE SE VA A ENVIAR SI ESTAN MAL LAS CREDENCIALES -->
-                <!-- @if(session('mensaje'))
+                @if(session('mensaje'))
                     <p style="color: red">{{ session('mensaje')}}</p>
-                @endif -->
+                @endif
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <input type="email" id="form1Example1" name="email" class="form-control" />
@@ -58,5 +51,3 @@ login
 
 
 </div>
-
-@endsection
