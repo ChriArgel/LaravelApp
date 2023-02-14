@@ -3,6 +3,7 @@
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PruebaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogOutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 
@@ -38,9 +39,13 @@ Route::get('/registro', [RegisterController::class, 'index']);
 Route::post('/registro', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'index']);
-Route::post('/sendLoginForm', [LoginController::class, 'store'])-> name('SendlogInfo');
+Route::post('/inicio', [LoginController::class, 'store']);
 
-Route::get('/prueba', [PruebaController::class, 'index']);
+Route::post('/salir', [LogOutController::class, 'store'])-> name('logout');
 
-
+// Route::get('/prueba', [PruebaController::class, 'index']);
 Route::get('/muro', [PostController::class, 'index'])->name('post');
+
+Route::get('/{user:username}', [PostController::class, 'index'])->name('post.index');
+Route::get('/muro/create', [PostController::class, 'create'])->name('post.create');
+

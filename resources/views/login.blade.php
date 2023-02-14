@@ -15,8 +15,9 @@ login
 
         <div class="col-6">
             <!-- LA FORMA SERA ENVIADA CON TODOS LOS DATOS A LA RUTA LOGIN  -->
-                 <form action="{{ route('/SendlogInfo) }}" method="POST"> -->
-                @crsf
+            
+                 <form action="/inicio" method="POST">
+                @csrf
 
                 <!-- LO DE ABAJO SE ENLAZA CON EL LOGIN CONTROLLER PARA INDICAR EL MENSAJE QUE SE VA A ENVIAR SI ESTAN MAL LAS CREDENCIALES -->
                 <!-- @if(session('mensaje'))
